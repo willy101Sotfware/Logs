@@ -14,6 +14,40 @@ This Log Analyzer is a Python script that helps you analyze log files from vario
 - Python 3.8+
 - pip (Python package manager)
 
+## Configuración del Entorno
+
+### Requisitos Previos
+- Python 3.10 o 3.11 (Recomendado)
+- pip
+- git
+
+### Configuración de Entorno Virtual
+1. Clonar el repositorio
+```bash
+git clone <URL_DEL_REPOSITORIO>
+cd LogsDobleClick
+```
+
+2. Crear entorno virtual (Opcional pero recomendado)
+```bash
+python -m venv .venv
+```
+
+3. Activar entorno virtual
+- En Windows:
+```bash
+.venv\Scripts\activate
+```
+- En macOS/Linux:
+```bash
+source .venv/bin/activate
+```
+
+4. Instalar dependencias
+```bash
+pip install -r requirements.txt
+```
+
 ## Installation
 1. Clone this repository
 2. Create a virtual environment (optional but recommended)
