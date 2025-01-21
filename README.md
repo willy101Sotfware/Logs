@@ -78,6 +78,30 @@ python log_analyzer.py
 ## Logging
 Detailed logs are saved in `log_analyzer.log`
 
+## Flujo de Trabajo de Ramas
+
+### Ramas Principales
+- `main`: Código estable y en producción
+- `develop`: Rama de desarrollo para nuevas características
+
+### Flujo de Trabajo
+1. Cree ramas de características desde `develop`
+2. Haga merge de características a `develop`
+3. Cuando esté listo para producción, haga merge de `develop` a `main`
+
+### Comandos Útiles
+```bash
+# Crear nueva rama de característica
+git checkout -b feature/nueva-caracteristica develop
+
+# Fusionar característica a develop
+git checkout develop
+git merge --no-ff feature/nueva-caracteristica
+
+# Eliminar rama de característica después del merge
+git branch -d feature/nueva-caracteristica
+```
+
 ## Contributing
 Feel free to open issues or submit pull requests.
 
