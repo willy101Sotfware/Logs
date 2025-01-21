@@ -1,22 +1,24 @@
 @echo off
 echo Configurando entorno virtual para Log Analyzer
 
-REM Verificar si ya existe un entorno virtual
+REM Eliminar entorno virtual existente si hay problemas
 if exist .venv\ (
-    echo Entorno virtual ya existe. Eliminando...
     rmdir /s /q .venv
 )
 
 REM Crear nuevo entorno virtual
 python -m venv .venv
-call .venv\Scripts\activate
 
-REM Actualizar pip
-python -m pip install --upgrade pip setuptools wheel
+REM Activar entorno virtual y instalar dependencias
+call .venv\Scripts\activate && (
+    pip install --upgrade pip
+    pip install -r requirements.txt
+    python log_analyzer.py
+)
 
-REM Instalar dependencias
-python -m pip install -r requirements.txt
+if errorlevel 1 (
+    echo Hubo un error durante la configuración o ejecución
+    pause
+)
 
-echo Entorno configurado exitosamente.
-echo Para activar: call .venv\Scripts\activate
 pause
